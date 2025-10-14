@@ -288,6 +288,121 @@
     </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about Carely</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do I need special equipment?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>No. Carely works on any smartphone, tablet, or laptop with a camera.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How does Carely integrate with pharmacy stock?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>Stock can be uploaded via Excel/CSV. Advanced plans allow automated sync with POS systems.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is Carely secure?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>Yes. All images and data are processed securely and not stored permanently unless authorized.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can patients trust Carely's recommendations?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>Yes. Carely uses AI analysis and filters based on patient preferences, but the professional always has the final say.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if my patients don't purchase through the PDF links?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>You still build loyalty with personalized routines. For purchases via links, you receive commissions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I customize the PDF reports?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>Yes, users can add logos, preferred brands, and custom notes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is there staff training?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>Yes. Onboarding includes a simple video tutorial and step-by-step guide.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What happens if I cancel?</span>
+                    <div class="faq-icon-circle">
+                        <span class="faq-icon">+</span>
+                    </div>
+                </button>
+                <div class="faq-divider"></div>
+                <div class="faq-answer">
+                    <p>You keep access until the end of the billing period.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CONTACT SPLIT -->
 <section id="contact" class="contact-split">
     <div id="demo" class="contact-block">
@@ -373,7 +488,40 @@
         <p>&copy; 2024 Carely. All rights reserved. | AI Skin Analysis for Professionals</p>
     </div>
 </footer>
-```
 
+<script>
+    function toggleFAQ(button) {
+        const faqItem = button.parentElement;
+        const answer = button.nextElementSibling.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        const allItems = document.querySelectorAll('.faq-item');
+        const allAnswers = document.querySelectorAll('.faq-answer');
+        const allIcons = document.querySelectorAll('.faq-icon');
+        
+        // Close all other answers
+        allItems.forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+            }
+        });
+        
+        allAnswers.forEach(item => {
+            if (item !== answer) {
+                item.classList.remove('active');
+            }
+        });
+        
+        allIcons.forEach(item => {
+            if (item !== icon) {
+                item.classList.remove('active');
+            }
+        });
+        
+        // Toggle current answer
+        faqItem.classList.toggle('active');
+        answer.classList.toggle('active');
+        icon.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
